@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, num, first, last, digits = 0, power = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    num = n;       
+    last = n % 10;    
+    while (n >= 10) {
+        n /= 10;
+        digits++;
+        power *= 10;
+    }
+    first = n;      
+    int swapped = last * power + (num % power) - last + first;
+
+    printf("Number after swapping first and last digit = %d", swapped);
+
+    return 0;
+}

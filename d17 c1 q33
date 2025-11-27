@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, original, rem, digits = 0;
+    float result = 0.0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+    int temp = num;
+    while(temp != 0) {
+        temp /= 10;
+        digits++;
+    }
+    temp = num;
+    while(temp != 0) {
+        rem = temp % 10;
+        result += pow(rem, digits);
+        temp /= 10;
+    }
+
+    if((int)result == original)
+        printf("%d is an Armstrong Number.\n", original);
+    else
+        printf("%d is NOT an Armstrong Number.\n", original);
+
+    return 0;
+}
